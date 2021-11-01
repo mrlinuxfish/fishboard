@@ -1,0 +1,244 @@
+points:
+  zones:
+    matrix:
+      columns:
+        outerpinky:
+          spread: 18
+          origin: [0, -17]
+          rows:
+            bottom:
+              skip: true
+            home:
+              bind: [0, 12, 0, 0]
+              column_net: P21
+            top:
+              bind: [0, 8, 5, 0]
+              column_net: P21
+        pinky:
+          spread: 18
+          stagger: 17/6
+          origin: [0, -17]
+          rows:
+            bottom:
+              bind: [5, 0, 0, 0]
+              column_net: P7
+            home:
+              bind: [0, 12, 0, 0]
+              column_net: P6
+            top:
+              bind: [0, 8, 5, 0]
+              column_net: P5
+        ring:
+          spread: 18
+          stagger: 17
+          rotate: -10
+          origin: [0, -17]
+          rows:
+            bottom:
+              bind: [0, 0, 2, 10]
+              column_net: P4
+            home:
+              bind: [5, 0, 5, 0]
+              column_net: P3
+            top:
+              bind: [0, 5, 0, 0]
+              column_net: P0
+        middle:
+          spread: 18
+          stagger: 17/3
+          rotate: -5
+          origin: [0, -17]
+          rows:
+            bottom:
+              bind: [0, 10, 10, 5]
+              column_net: P1
+            home:
+              bind: 5
+              column_net: P19
+            top:
+              bind: [0, 0, 0, 0]
+              column_net: P18
+          key:
+            shift: [0.2, 0]
+        index:
+          spread: 18
+          stagger: -17/3
+          rotate: -5
+          origin: [0, -17]
+          rows:
+            bottom:
+              bind: [0, 5, 0, 0]
+              column_net: P15
+            home:
+              bind: [5, 0, 5, 0]
+              column_net: P14
+            top:
+              bind: [0, 0, 0, 6]
+              column_net: P16
+        inner:
+          spread: 18
+          stagger: -17/3
+          origin: [0, -17]
+          rows:
+            bottom:
+              bind: [5, 0, 15, 5]
+              column_net: P10
+            home:
+              bind: [0, 0, 0, 5]
+              column_net: P20
+            top:
+              bind: [0, 0, 5, 5]
+              column_net: P21
+      key:
+        footprints:
+          choc_hotswap:
+            type: choc
+            nets:
+              from: =column_net
+              to: GND
+            params:
+                keycaps: true
+                reverse: true
+                hotswap: true
+          choc:
+            type: choc
+            anchor:
+              rotate: 180
+            nets:
+              from: =column_net
+              to: GND
+            params:
+                keycaps: true
+                reverse: true
+      rows:
+        bottom:
+          padding: 17
+        home:
+          padding: 17
+        top:
+    thumb:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-20,-20]
+      columns:
+        first:
+          rotate: -15
+          rows:
+            only:
+              column_net: P8
+              bind: [10, 1, 0, 50]
+        second:
+          spread: 18
+          rotate: -10
+          origin: [-9, -9.5]
+          rows:
+            only:
+              column_net: P9
+              bind: [0, 0, 0, 70]
+        third:
+          spread: 18
+          rotate: -10
+          origin: [-9, -9.5]
+          rows:
+            only:
+              column_net: P9
+              bind: [0, 0, 0, 5]
+      rows:
+        only:
+          padding: 17
+      key:
+        footprints:
+          choc_hotswap:
+            type: choc
+            nets:
+              from: =column_net
+              to: GND
+            params:
+                keycaps: true
+                reverse: true
+                hotswap: true
+          choc:
+            type: choc
+            anchor:
+              rotate: 180
+            nets:
+              from: =column_net
+              to: GND
+            params:
+                keycaps: true
+                reverse: true
+  mirror:
+    ref: matrix_inner_bottom
+    distance: 65
+outlines:
+  glue:
+    center:
+      top:
+        left:
+          ref: matrix_inner_top
+          shift: [0,17/2]
+          rotate: 20
+        right:
+          ref: mirror_matrix_inner_top
+          shift: [0,17/2]
+          rotate: 20
+      bottom:
+        left.ref: thumb_second_only
+        right.ref: mirror_thumb_second_only
+  exports:
+    _top_center:
+      - type: keys
+        side: both
+        size: [18,17]
+      - operation: intersect
+        type: rectangle
+        anchor:
+          ref: [matrix_inner_top, mirror_matrix_inner_top]
+        size: [18,17]
+        mirror: true
+    _bottom_center:
+      - type: keys
+        side: glue
+      - operation: subtract
+        type: circle
+        anchor:
+          ref: [thumb_third_only, mirror_thumb_third_only]
+          shift: [0,-60]
+        radius: 60
+        mirror: true
+    combined:
+      - type: outline
+        name: _top_center
+        fillet: 3
+      - type: outline
+        name: _bottom_center
+        fillet: 3
+      - type: keys
+        side: left
+        size: [18,17]
+        corner: 1
+      - type: keys
+        side: right
+        size: [18,17]
+        corner: 1
+    first:
+      - type: outline
+        name: combined
+        fillet: 3
+    second:
+      - type: outline
+        name: first
+        fillet: 2
+    third:
+      - type: outline
+        name: second
+        fillet: 1
+    panel:
+      - type: outline
+        name: third
+        fillet: 0.5
+pcbs:
+  fish_dux:
+    outlines:
+      main:
+        outline: panel
