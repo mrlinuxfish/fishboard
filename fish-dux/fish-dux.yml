@@ -10,10 +10,12 @@ points:
               skip: true
             home:
               bind: [0, 12, 0, 0]
-              column_net: P21
+              column_net: P1
+              row_net: P8
             top:
               bind: [0, 8, 5, 0]
-              column_net: P21
+              column_net: P1
+              row_net: P7
         pinky:
           spread: 18
           stagger: 17/6
@@ -21,13 +23,16 @@ points:
           rows:
             bottom:
               bind: [5, 0, 0, 0]
-              column_net: P7
+              column_net: P2
+              row_net: P9
             home:
               bind: [0, 12, 0, 0]
-              column_net: P6
+              column_net: P2
+              row_net: P8
             top:
               bind: [0, 8, 5, 0]
-              column_net: P5
+              column_net: P2
+              row_net: P7
         ring:
           spread: 18
           stagger: 17
@@ -36,13 +41,16 @@ points:
           rows:
             bottom:
               bind: [0, 0, 2, 10]
-              column_net: P4
+              column_net: P3
+              row_net: P9
             home:
               bind: [5, 0, 5, 0]
               column_net: P3
+              row_net: P8
             top:
               bind: [0, 5, 0, 0]
-              column_net: P0
+              column_net: P3
+              row_net: P7
         middle:
           spread: 18
           stagger: 17/3
@@ -51,13 +59,16 @@ points:
           rows:
             bottom:
               bind: [0, 10, 10, 5]
-              column_net: P1
+              column_net: P4
+              row_net: P9
             home:
               bind: 5
-              column_net: P19
+              column_net: P4
+              row_net: P8
             top:
               bind: [0, 0, 0, 0]
-              column_net: P18
+              column_net: P4
+              row_net: P7
           key:
             shift: [0.2, 0]
         index:
@@ -68,13 +79,16 @@ points:
           rows:
             bottom:
               bind: [0, 5, 0, 0]
-              column_net: P15
+              column_net: P5
+              row_net: P9
             home:
               bind: [5, 0, 5, 0]
-              column_net: P14
+              column_net: P5
+              row_net: P8
             top:
               bind: [0, 0, 0, 6]
-              column_net: P16
+              column_net: P5
+              row_net: P7
         inner:
           spread: 18
           stagger: -17/3
@@ -82,34 +96,16 @@ points:
           rows:
             bottom:
               bind: [5, 0, 15, 5]
-              column_net: P10
+              column_net: P6
+              row_net: P9
             home:
               bind: [0, 0, 0, 5]
-              column_net: P20
+              column_net: P6
+              row_net: P8
             top:
               bind: [0, 0, 5, 5]
-              column_net: P21
-      key:
-        footprints:
-          choc_hotswap:
-            type: choc
-            nets:
-              from: =column_net
-              to: GND
-            params:
-                keycaps: true
-                reverse: true
-                hotswap: true
-          choc:
-            type: choc
-            anchor:
-              rotate: 180
-            nets:
-              from: =column_net
-              to: GND
-            params:
-                keycaps: true
-                reverse: true
+              column_net: P6
+              row_net: P7
       rows:
         bottom:
           padding: 17
@@ -125,7 +121,8 @@ points:
           rotate: -15
           rows:
             only:
-              column_net: P8
+              column_net: P4
+              row_net: P10
               bind: [10, 1, 0, 50]
         second:
           spread: 18
@@ -133,7 +130,8 @@ points:
           origin: [-9, -9.5]
           rows:
             only:
-              column_net: P9
+              column_net: P5
+              row_net: P10
               bind: [0, 0, 0, 70]
         third:
           spread: 18
@@ -141,29 +139,31 @@ points:
           origin: [-9, -9.5]
           rows:
             only:
-              column_net: P9
+              column_net: P6
+              row_net: P10
               bind: [0, 0, 0, 5]
       rows:
         only:
           padding: 17
       key:
         footprints:
-          choc_hotswap:
-            type: choc
+          diode:
+            type: diode
             nets:
-              from: =column_net
-              to: GND
+              from: =colrow
+              to: =row_net
+            anchor:
+              shift: [0,5]
+              rotate: 90
             params:
-                keycaps: true
-                reverse: true
-                hotswap: true
+              through_hole: false
           choc:
             type: choc
-            anchor:
-              rotate: 180
             nets:
               from: =column_net
-              to: GND
+              to: =colrow
+            anchor:
+              rotate: 180
             params:
                 keycaps: true
                 reverse: true
