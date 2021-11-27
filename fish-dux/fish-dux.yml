@@ -106,6 +106,28 @@ points:
               bind: [0, 0, 5, 5]
               column_net: P6
               row_net: P7
+      key:
+        footprints:
+          diode:
+            type: diode
+            nets:
+              from: =colrow
+              to: =row_net
+            anchor:
+              shift: [0,5]
+              rotate: 90
+            params:
+              through_hole: false
+          choc:
+            type: choc
+            nets:
+              from: =column_net
+              to: =colrow
+            anchor:
+              rotate: 180
+            params:
+                keycaps: true
+                reverse: false
       rows:
         bottom:
           padding: 17
@@ -166,7 +188,7 @@ points:
               rotate: 180
             params:
                 keycaps: true
-                reverse: true
+                reverse: false
   mirror:
     ref: matrix_inner_bottom
     distance: 65
