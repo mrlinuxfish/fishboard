@@ -4,4 +4,5 @@
   (lib (name "misc")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/kleeb/misc.kicad_sym")(options "")(descr ""))
   (lib (name "display")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/kleeb/display.kicad_sym")(options "")(descr ""))
   (lib (name "ic")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/kleeb/ic.kicad_sym")(options "")(descr ""))
+  (lib (name "diode-choc")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/choc/diode-choc.kicad_sym")(options "")(descr ""))
 )
