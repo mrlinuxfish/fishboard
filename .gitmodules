@@ -1,3 +1,6 @@
 [submodule "lib/kleeb"]
 	path = lib/kleeb
 	url = https://github.com/crides/kleeb
+[submodule "lib/kicad_lib_tmk"]
+	path = lib/kicad_lib_tmk
+	url = https://github.com/tmk/kicad_lib_tmk.git

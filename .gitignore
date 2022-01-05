@@ -1,3 +1,4 @@
 # ignore temp files
 fish-dux/ergogen-export
 fish-dux/fishboard-backups
+*auto*
