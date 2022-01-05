@@ -1,0 +1,6 @@
+(fp_lib_table
+  (lib (name "mcu")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/kleeb/mcu.pretty")(options "")(descr ""))
+  (lib (name "switch")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/kleeb/switch.pretty")(options "")(descr ""))
+  (lib (name "misc")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/kleeb/misc.pretty")(options "")(descr ""))
+  (lib (name "display")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/kleeb/display.pretty")(options "")(descr ""))
+)
