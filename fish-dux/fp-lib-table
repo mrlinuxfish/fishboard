@@ -3,6 +3,8 @@
   (lib (name "switch")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/kleeb/switch.pretty")(options "")(descr ""))
   (lib (name "misc")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/kleeb/misc.pretty")(options "")(descr ""))
   (lib (name "display")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/kleeb/display.pretty")(options "")(descr ""))
+  (lib (name "switches")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/keyboard_footprints/switches.pretty")(options "")(descr ""))
+  (lib (name "puck")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/keyboard_footprints/puck.pretty")(options "")(descr ""))
   (lib (name "pg1350")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/choc/pg1350.pretty")(options "")(descr ""))
   (lib (name "pg1232")(type "KiCad")(uri "/home/atomsk/projects/fishboard/lib/choc/pg1232.pretty")(options "")(descr ""))
 )
