@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "switch")(type "KiCad")(uri "${KICAD_KLEEB}/switch.kicad_sym")(options "")(descr ""))
+)
