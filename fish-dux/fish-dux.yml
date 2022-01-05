@@ -112,16 +112,16 @@ points:
             type: diode
             nets:
               from: =colrow
-              to: =row_net
+              to: =column_net
             anchor:
               shift: [0,5]
-              rotate: 90
+              rotate: 180
             params:
               through_hole: false
           choc:
             type: choc
             nets:
-              from: =column_net
+              from: =row_net
               to: =colrow
             anchor:
               rotate: 180
@@ -173,16 +173,16 @@ points:
             type: diode
             nets:
               from: =colrow
-              to: =row_net
+              to: =column_net
             anchor:
               shift: [0,5]
-              rotate: 90
+              rotate: 180
             params:
               through_hole: false
           choc:
             type: choc
             nets:
-              from: =column_net
+              from: =row_net
               to: =colrow
             anchor:
               rotate: 180
