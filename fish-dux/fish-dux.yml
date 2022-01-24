@@ -4,18 +4,19 @@ points:
       columns:
         outerpinky:
           spread: 18
+          rotate: -10
           origin: [0, -17]
           rows:
             bottom:
-              skip: true
-            home:
               bind: [0, 12, 0, 0]
+              column_net: P1
+              row_net: P9
+            home:
+              bind: [0, 8, 5, 0]
               column_net: P1
               row_net: P8
             top:
-              bind: [0, 8, 5, 0]
-              column_net: P1
-              row_net: P7
+              skip: true
         pinky:
           spread: 18
           stagger: 17/6
@@ -199,11 +200,11 @@ outlines:
         left:
           ref: matrix_inner_top
           shift: [0,17/2]
-          rotate: 20
+          rotate: 25
         right:
           ref: mirror_matrix_inner_top
           shift: [0,17/2]
-          rotate: 20
+          rotate: 25
       bottom:
         left.ref: thumb_second_only
         right.ref: mirror_thumb_second_only
@@ -225,7 +226,7 @@ outlines:
         type: circle
         anchor:
           ref: [thumb_third_only, mirror_thumb_third_only]
-          shift: [0,-60]
+          shift: [0,-55]
         radius: 60
         mirror: true
     combined:
